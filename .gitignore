@@ -1,0 +1,46 @@
+# KITTI and generated dataset trees
+KITTI/
+kitti_train/
+kitti_val/
+kitti_yolo/images/
+kitti_yolo/labels/
+kitti_yolo/*.cache
+
+# Model weights and exported networks
+weights/
+pretrained/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+
+# Frame-level predictions, point clouds, and caches
+predictions/
+camera_yolo/
+*.bin
+*.npz
+*.pkl
+*.pickle
+*.cache
+
+# Large archives and media
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.png
+*.jpg
+*.jpeg
+
+# Python and local tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.idea/
+.vscode/
+.pytest_cache/
+build/
+dist/
+*.egg-info/

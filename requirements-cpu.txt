@@ -1,0 +1,7 @@
+numpy>=2.4,<3
+Pillow>=12,<13
+PyYAML>=6,<7
+torch>=2.12
+torchvision>=0.29
+tqdm>=4.62
+ultralytics>=8.4
