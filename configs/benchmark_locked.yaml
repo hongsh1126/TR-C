@@ -1,0 +1,43 @@
+protocol:
+  seed: 2026
+  calibration_ids: trc_kitti/calibration_ids.txt
+  locked_test_ids: trc_kitti/locked_test_ids.txt
+  calibration_frames: 1886
+  locked_test_frames: 1883
+  classes: [Car, Pedestrian, Cyclist]
+  distance_bins_m: [[0, 20], [20, 40], [40, 70]]
+  visibility: KITTI Moderate
+
+data:
+  kitti_train_root: kitti_train
+  kitti_validation_root: kitti_val
+  yolo_dataset_root: kitti_yolo
+
+external_weights_not_redistributed:
+  camera_initialization: yolo11n.pt
+  camera_selected_checkpoint: external_weights/camera_locked_converged_best.pt
+  lidar_checkpoint: external_weights/pointpillars_epoch_160.pth
+
+camera_training:
+  epochs: 30
+  patience: 7
+  batch: 16
+  image_size: 640
+  device: cpu
+  workers: 4
+  optimizer: auto
+  seed: 2026
+  deterministic: true
+
+evaluation:
+  camera_score: 0.25
+  lidar_score: 0.50
+  camera_floor: 0.10
+  fusion_iou: 0.30
+  match_iou: 0.50
+  gate_distance_m: 40.0
+  fallback_lidar_score: 0.75
+  laser_camera_score: 0.35
+  reference_speed_mps: 13.9
+  yolo_batch: 16
+  cpu_threads: 14

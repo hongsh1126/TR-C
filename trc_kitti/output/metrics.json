@@ -1,0 +1,80 @@
+{
+  "settings": {
+    "mode": "evaluate",
+    "data": "kitti_val",
+    "output": "trc_kitti/output",
+    "checkpoint": "external_weights/pointpillars_epoch_160.pth",
+    "yolo_checkpoint": "external_weights/camera_pilot_best.pt",
+    "limit": null,
+    "threads": 14,
+    "overwrite": false,
+    "camera_floor": 0.1,
+    "yolo_batch": 16,
+    "camera_score": 0.25,
+    "lidar_score": 0.5,
+    "fusion_iou": 0.3,
+    "match_iou": 0.5,
+    "gate_distance": 40.0,
+    "fallback_lidar_score": 0.75,
+    "laser_camera_score": 0.35,
+    "reference_speed": 13.9
+  },
+  "results": [
+    {
+      "method": "camera",
+      "frames": 430,
+      "near_recall": 0.8744588744588745,
+      "mid_recall": 0.7604562737642585,
+      "far_recall": 0.676056338028169,
+      "near_localization_error_m": 1.9992352827719533,
+      "false_positives": 401,
+      "mean_latency_ms": 230.02378349585004,
+      "p95_latency_ms": 414.66113124624826,
+      "mean_available_margin_s": 1.1715020792656807,
+      "fp_reduction_vs_camera": 0.0,
+      "margin_gain_vs_lidar_s": 0.7320920164437973
+    },
+    {
+      "method": "lidar",
+      "frames": 430,
+      "near_recall": 0.9199134199134199,
+      "mid_recall": 0.8954372623574145,
+      "far_recall": 0.8028169014084507,
+      "near_localization_error_m": 0.12900598249891226,
+      "false_positives": 416,
+      "mean_latency_ms": 1482.1028672047719,
+      "p95_latency_ms": 2126.3368899817574,
+      "mean_available_margin_s": 0.43941006282188344,
+      "fp_reduction_vs_camera": -0.03740648379052369,
+      "margin_gain_vs_lidar_s": 0.0
+    },
+    {
+      "method": "fusion",
+      "frames": 430,
+      "near_recall": 0.8354978354978355,
+      "mid_recall": 0.7395437262357415,
+      "far_recall": 0.6338028169014085,
+      "near_localization_error_m": 0.1307880734117615,
+      "false_positives": 71,
+      "mean_latency_ms": 1712.126650700622,
+      "p95_latency_ms": 2360.0926549406713,
+      "mean_available_margin_s": 0.27259957948869523,
+      "fp_reduction_vs_camera": 0.8229426433915212,
+      "margin_gain_vs_lidar_s": -0.1668104833331882
+    },
+    {
+      "method": "proposed",
+      "frames": 430,
+      "near_recall": 0.9047619047619048,
+      "mid_recall": 0.844106463878327,
+      "far_recall": 0.6901408450704225,
+      "near_localization_error_m": 0.15582114719210916,
+      "false_positives": 376,
+      "mean_latency_ms": 1726.5970558183928,
+      "p95_latency_ms": 2374.984199932077,
+      "mean_available_margin_s": 0.30178843457161186,
+      "fp_reduction_vs_camera": 0.06234413965087282,
+      "margin_gain_vs_lidar_s": -0.13762162825027158
+    }
+  ]
+}

@@ -5,3 +5,5 @@ torch>=2.12
 torchvision>=0.29
 tqdm>=4.62
 ultralytics>=8.4
+numba>=0.60
+scipy>=1.11

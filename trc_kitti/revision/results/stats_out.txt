@@ -1,0 +1,89 @@
+REPLICATION
+camera {'near': 0.9135, 'mid': 0.8266, 'far': 0.775, 'fp': 1856, 'near_err': 1.8851} | reported {'near': 0.9135, 'mid': 0.8266, 'far': 0.775, 'fp': 1856, 'near_err': 1.8851}
+lidar {'near': 0.8941, 'mid': 0.8979, 'far': 0.7765, 'fp': 1855, 'near_err': 0.1286} | reported {'near': 0.8941, 'mid': 0.8979, 'far': 0.7765, 'fp': 1855, 'near_err': 0.1286}
+fusion {'near': 0.8509, 'mid': 0.7983, 'far': 0.6915, 'fp': 432, 'near_err': 0.1263} | reported {'near': 0.8509, 'mid': 0.7983, 'far': 0.6915, 'fp': 432, 'near_err': 0.1263}
+proposed {'near': 0.9246, 'mid': 0.8704, 'far': 0.7809, 'fp': 1872, 'near_err': 0.1839} | reported {'near': 0.9246, 'mid': 0.8704, 'far': 0.7809, 'fp': 1872, 'near_err': 0.1839}
+
+PAIRED RECALL (diff in percentage points, 95% cluster-bootstrap CI)
+ proposed - camera    near:  +1.10 [ +0.18, +2.01] pboot=0.024 holm=0.072 | mcnemar a-only=65 b-only=40 p=0.0187 holm=0.056
+ proposed - camera     mid:  +4.38 [ +3.38, +5.45] pboot=0.001 holm=0.003 | mcnemar a-only=119 b-only=17 p=0.0000 holm=0.000
+ proposed - camera     far:  +0.60 [ -0.46, +1.71] pboot=0.358 holm=0.716 | mcnemar a-only=12 b-only=8 p=0.5034 holm=1.000
+ proposed - camera     all:  +2.49 [ +1.87, +3.13] pboot=0.001 holm=nan | mcnemar a-only=196 b-only=65 p=0.0000 holm=nan
+ proposed - lidar     near:  +3.04 [ +1.87, +4.22] pboot=0.001 holm=0.003 | mcnemar a-only=122 b-only=53 p=0.0000 holm=0.000
+ proposed - lidar      mid:  -2.75 [ -3.98, -1.56] pboot=0.001 holm=0.003 | mcnemar a-only=64 b-only=128 p=0.0000 holm=0.000
+ proposed - lidar      far:  +0.45 [ -2.75, +3.74] pboot=0.867 holm=0.867 | mcnemar a-only=58 b-only=55 p=0.8509 holm=1.000
+ proposed - lidar      all:  +0.15 [ -0.70, +1.04] pboot=0.751 holm=nan | mcnemar a-only=244 b-only=236 p=0.7494 holm=nan
+    lidar - camera    near:  -1.94 [ -3.44, -0.40] pboot=0.013 holm=nan | mcnemar a-only=117 b-only=161 p=0.0098 holm=nan
+    lidar - camera     mid:  +7.12 [ +5.51, +8.76] pboot=0.001 holm=nan | mcnemar a-only=246 b-only=80 p=0.0000 holm=nan
+    lidar - camera     far:  +0.15 [ -3.37, +3.57] pboot=0.933 holm=nan | mcnemar a-only=67 b-only=66 p=1.0000 holm=nan
+    lidar - camera     all:  +2.33 [ +1.21, +3.47] pboot=0.001 holm=nan | mcnemar a-only=430 b-only=307 p=0.0000 holm=nan
+ proposed - fusion    near:  +7.37 [ +6.18, +8.67] pboot=0.001 holm=nan | mcnemar a-only=167 b-only=0 p=0.0000 holm=nan
+ proposed - fusion     mid:  +7.21 [ +6.12, +8.38] pboot=0.001 holm=nan | mcnemar a-only=171 b-only=3 p=0.0000 holm=nan
+ proposed - fusion     far:  +8.94 [ +6.65,+11.36] pboot=0.001 holm=nan | mcnemar a-only=63 b-only=3 p=0.0000 holm=nan
+ proposed - fusion     all:  +7.50 [ +6.69, +8.34] pboot=0.001 holm=nan | mcnemar a-only=401 b-only=6 p=0.0000 holm=nan
+ proposed - gate70    near:  +0.00 [ +0.00, +0.00] pboot=2.000 holm=nan | mcnemar a-only=0 b-only=0 p=1.0000 holm=nan
+ proposed - gate70     mid:  -0.13 [ -0.30, +0.00] pboot=0.113 holm=nan | mcnemar a-only=0 b-only=3 p=0.2500 holm=nan
+ proposed - gate70     far:  -2.53 [ -3.87, -1.18] pboot=0.001 holm=nan | mcnemar a-only=3 b-only=20 p=0.0005 holm=nan
+ proposed - gate70     all:  -0.38 [ -0.56, -0.19] pboot=0.001 holm=nan | mcnemar a-only=3 b-only=23 p=0.0001 holm=nan
+   gate50 - proposed  near:  +0.00 [ +0.00, +0.00] pboot=2.000 holm=nan | mcnemar a-only=0 b-only=0 p=1.0000 holm=nan
+   gate50 - proposed   mid:  +0.13 [ +0.00, +0.30] pboot=0.113 holm=nan | mcnemar a-only=3 b-only=0 p=0.2500 holm=nan
+   gate50 - proposed   far:  +2.53 [ +1.30, +3.81] pboot=0.001 holm=nan | mcnemar a-only=19 b-only=2 p=0.0002 holm=nan
+   gate50 - proposed   all:  +0.38 [ +0.21, +0.56] pboot=0.001 holm=nan | mcnemar a-only=22 b-only=2 p=0.0000 holm=nan
+
+FALSE POSITIVES per frame difference
+{'a': 'proposed', 'b': 'camera', 'diff_per_frame': 0.008497079129049389, 'lo': -0.02496016994158258, 'hi': 0.0403611258629846, 'total_a': 1872, 'total_b': 1856}
+{'a': 'proposed', 'b': 'lidar', 'diff_per_frame': 0.009028146574614976, 'lo': -0.04143653744025491, 'hi': 0.06001062134891131, 'total_a': 1872, 'total_b': 1855}
+{'a': 'lidar', 'b': 'camera', 'diff_per_frame': -0.0005310674455655868, 'lo': -0.06319702602230483, 'hi': 0.0605416887944769, 'total_a': 1855, 'total_b': 1856}
+{'a': 'fusion', 'b': 'camera', 'diff_per_frame': -0.7562400424853957, 'lo': -0.8146574614976102, 'hi': -0.7020711630377058, 'total_a': 432, 'total_b': 1856}
+
+LOCALIZATION near field: own-matched vs common subset (n common = 1909 )
+camera {'n': 2071, 'mean': 1.885, 'median': 1.885, 'common_n': 1909, 'common_mean': 1.964, 'common_median': 1.963}
+lidar {'n': 2027, 'mean': 0.129, 'median': 0.11, 'common_n': 1909, 'common_mean': 0.126, 'common_median': 0.109}
+fusion {'n': 1929, 'mean': 0.126, 'median': 0.11, 'common_n': 1909, 'common_mean': nan, 'common_median': nan}
+proposed {'n': 2096, 'mean': 0.184, 'median': 0.114, 'common_n': 1909, 'common_mean': 0.137, 'common_median': 0.11}
+[{'a': 'proposed', 'b': 'camera', 'mean_diff': -1.827645501051627, 'lo': -1.884142308643047, 'hi': -1.7693013954770982}, {'a': 'proposed', 'b': 'lidar', 'mean_diff': 0.010259377637916114, 'lo': 0.005182165839072435, 'hi': 0.016504790981727517}]
+
+PROPOSED matched detections by source {np.str_('far_cam'): {'n_all': 217, 'n_near': 0, 'mean_err_near': None, 'median_err_near': None}, np.str_('lidar_fallback'): {'n_all': 158, 'n_near': 45, 'mean_err_near': 0.11766138035390113, 'median_err_near': 0.1037355363368988}, np.str_('lidar_match'): {'n_all': 4029, 'n_near': 1909, 'mean_err_near': 0.12641736261757366, 'median_err_near': 0.10954132676124573}, np.str_('roi_proxy'): {'n_all': 244, 'n_near': 142, 'mean_err_near': 0.978079295913938, 'median_err_near': 0.9368751049041748}}
+ROI proxy accuracy {'n': 244, 'proxy_mean': 1.5669791373561641, 'proxy_median': 0.9472133219242096, 'proxy_p90': 1.5858145356178295, 'camera_mean_same_objects': 2.86390650315882, 'camera_n': 244, 'lidar_mean_same_objects': 0.12968741584083307, 'lidar_n': 23}
+FP by source {'proposed': {'roi_proxy': 765, 'lidar_fallback': 414, 'lidar_match': 421, 'far_cam': 272}, 'no_roi': {'lidar_fallback': 414, 'lidar_match': 398, 'far_cam': 272}}
+
+GATE ASSIGNMENT (share of camera-detected objects whose monocular z is <=40 or >40 m)
+near {'n': 2054, 'z_le_40': 1.0, 'z_gt_40': 0.0, 'median_abs_depth_err': 1.829, 'median_rel_depth_err': -0.142}
+mid {'n': 1916, 'z_le_40': 0.997, 'z_gt_40': 0.003, 'median_abs_depth_err': 2.673, 'median_rel_depth_err': -0.098}
+far {'n': 517, 'z_le_40': 0.596, 'z_gt_40': 0.404, 'median_abs_depth_err': 4.194, 'median_rel_depth_err': -0.096}
+
+FAR FIELD per class {"pedestrian": {"n": 26, "cam_any": 1, "cam_ge025": 1, "lid_any": 15, "lid_ge05": 3, "proposed_tp": 0, "camera_tp": 1, "lidar_tp": 3}, "cyclist": {"n": 42, "cam_any": 6, "cam_ge025": 1, "lid_any": 22, "lid_ge05": 16, "proposed_tp": 0, "camera_tp": 1, "lidar_tp": 16}, "car": {"n": 603, "cam_any": 548, "cam_ge025": 515, "lid_any": 534, "lid_ge05": 502, "proposed_tp": 524, "camera_tp": 518, "lidar_tp": 502}}
+
+TIMING (ms)
+camera {'n': 1883, 'mean': 72.7, 'sd': 14.7, 'median': 70.4, 'q1': 67.4, 'q3': 74.1, 'p95': 104.5, 'p99': 118.1, 'min': 20.1, 'max': 118.7}
+lidar {'n': 1883, 'mean': 1072.5, 'sd': 302.7, 'median': 979.2, 'q1': 849.4, 'q3': 1222.8, 'p95': 1637.6, 'p99': 1984.7, 'min': 609.1, 'max': 2737.2}
+fusion (camera+LiDAR) {'n': 1883, 'mean': 1145.2, 'sd': 304.5, 'median': 1055.2, 'q1': 925.0, 'q3': 1295.6, 'p95': 1729.1, 'p99': 2051.8, 'min': 674.1, 'max': 2801.9}
+range gated {'n': 1883, 'mean': 1145.6, 'sd': 304.5, 'median': 1055.3, 'q1': 925.4, 'q3': 1295.7, 'p95': 1729.2, 'p99': 2051.9, 'min': 674.2, 'max': 2802.0}
+gated minus LiDAR-only latency per frame (ms): mean 73.1 sd 14.8
+
+SWEEP (threshold, FP/frame, overall recall)
+camera [(0.1, 2.16, 0.892), (0.3, 0.81, 0.849), (0.5, 0.37, 0.796), (0.7, 0.15, 0.67), (0.9, 0.02, 0.163)]
+lidar [(0.1, 4.47, 0.923), (0.3, 2.17, 0.916), (0.5, 0.99, 0.881), (0.7, 0.43, 0.772), (0.9, 0.12, 0.498)]
+fusion [(0.1, 0.52, 0.857), (0.3, 0.28, 0.818), (0.5, 0.15, 0.759), (0.7, 0.07, 0.613), (0.9, 0.01, 0.155)]
+proposed [(0.1, 1.41, 0.902), (0.3, 0.96, 0.876), (0.5, 0.62, 0.846), (0.7, 0.42, 0.777), (0.9, 0.12, 0.499)]
+recall at matched FP/frame: {'0.5': {'camera': 0.8111105490032003, 'lidar': 0.7856159832953683, 'fusion': 0.8537247625280511, 'proposed': 0.8046102558764217}, '1.0': {'camera': 0.8545049193040275, 'lidar': 0.8812393767850589, 'fusion': None, 'proposed': 0.8787864101197111}, '2.0': {'camera': 0.8866154721580496, 'lidar': 0.9114819226797395, 'fusion': None, 'proposed': None}}
+
+VARIANTS
+camera {'near': 0.9135, 'mid': 0.8266, 'far': 0.775, 'all': 0.8574, 'fp': 1856, 'near_err': 1.8851}
+lidar {'near': 0.8941, 'mid': 0.8979, 'far': 0.7765, 'all': 0.8808, 'fp': 1855, 'near_err': 0.1286}
+proposed {'near': 0.9246, 'mid': 0.8704, 'far': 0.7809, 'all': 0.8823, 'fp': 1872, 'near_err': 0.1839}
+gate30 {'near': 0.9246, 'mid': 0.8528, 'far': 0.775, 'all': 0.8738, 'fp': 1944, 'near_err': 0.1839}
+gate50 {'near': 0.9246, 'mid': 0.8717, 'far': 0.8063, 'all': 0.8861, 'fp': 1801, 'near_err': 0.1839}
+gate60 {'near': 0.9246, 'mid': 0.8717, 'far': 0.8063, 'all': 0.8861, 'fp': 1777, 'near_err': 0.1839}
+gate70 {'near': 0.9246, 'mid': 0.8717, 'far': 0.8063, 'all': 0.8861, 'fp': 1754, 'near_err': 0.1839}
+no_roi {'near': 0.8708, 'mid': 0.8433, 'far': 0.7273, 'all': 0.8404, 'fp': 1084, 'near_err': 0.1261}
+no_fallback {'near': 0.9047, 'mid': 0.8245, 'far': 0.7735, 'all': 0.8525, 'fp': 1458, 'near_err': 0.1854}
+
+GATE SELECTION on calibration subset
+proposed {'cal_recall': 0.881, 'cal_fp': 1732.0, 'locked_recall': 0.8823, 'locked_fp': 1872}
+gate30 {'cal_recall': 0.8741, 'cal_fp': 1811.0, 'locked_recall': 0.8738, 'locked_fp': 1944}
+gate50 {'cal_recall': 0.8835, 'cal_fp': 1673.0, 'locked_recall': 0.8861, 'locked_fp': 1801}
+gate60 {'cal_recall': 0.8839, 'cal_fp': 1645.0, 'locked_recall': 0.8861, 'locked_fp': 1777}
+gate70 {'cal_recall': 0.8839, 'cal_fp': 1617.0, 'locked_recall': 0.8861, 'locked_fp': 1754}
+F1 on calibration {'camera': [(0.1, 0.6652905198776758), (0.3, 0.7984995671828412), (0.5, 0.8334220329962746), (0.7, 0.7855020796197266), (0.9, 0.2868095487018644)], 'lidar': [(0.1, 0.5047930403945254), (0.3, 0.6782908029634064), (0.5, 0.7936479128856624), (0.7, 0.8130471029595665), (0.9, 0.6530774321641297)], 'proposed': [(0.1, 0.7512820512820513), (0.3, 0.787923552765211), (0.5, 0.8190457335181153), (0.7, 0.8079974611234528), (0.9, 0.6574367088607594)]} best {'camera': 0.5, 'lidar': 0.7, 'proposed': 0.5}
+locked results at calibration-selected thresholds {'camera': {'threshold': 0.5, 'near': 0.8667842964269961, 'mid': 0.7682403433476395, 'far': 0.6512667660208644, 'fp': 699}, 'lidar': {'threshold': 0.7, 'near': 0.7948831054256726, 'mid': 0.8171673819742489, 'far': 0.5380029806259314, 'fp': 811}}

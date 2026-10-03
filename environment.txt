@@ -8,3 +8,10 @@ torchvision: 0.29.0.dev20260626+cpu
 Pillow: 12.2.0
 PyYAML: 6.0.3
 Ultralytics: 8.4.80
+
+Revision analyses (3D/BEV AP, FOV-reduced LiDAR input), run on a second workstation:
+Python: 3.12.10
+NumPy: 2.5.3
+PyTorch: 2.14.1+cpu
+numba: 0.68.0
+SciPy: used by trc_kitti/revision/stats_r1.py

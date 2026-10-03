@@ -1,0 +1,264 @@
+{
+  "settings": {
+    "mode": "evaluate",
+    "data": "kitti_val",
+    "output": "trc_kitti/output_locked",
+    "checkpoint": "external_weights/pointpillars_epoch_160.pth",
+    "yolo_checkpoint": "external_weights/camera_locked_converged_best.pt",
+    "image_fallback": "",
+    "velodyne_fallback": "",
+    "label_fallback": "",
+    "limit": null,
+    "threads": 14,
+    "overwrite": false,
+    "skip_camera": false,
+    "camera_floor": 0.1,
+    "yolo_batch": 16,
+    "camera_score": 0.25,
+    "lidar_score": 0.5,
+    "fusion_iou": 0.3,
+    "match_iou": 0.5,
+    "gate_distance": 40.0,
+    "fallback_lidar_score": 0.75,
+    "laser_camera_score": 2.0,
+    "reference_speed": 13.9,
+    "metrics_tag": "locked_no_roi",
+    "id_list": "trc_kitti/locked_test_ids.txt"
+  },
+  "results": [
+    {
+      "method": "camera",
+      "frames": 1883,
+      "near_recall": 0.913542126157918,
+      "near_recall_ci95": [
+        0.9012621443994276,
+        0.9244229231984179
+      ],
+      "mid_recall": 0.8266094420600858,
+      "mid_recall_ci95": [
+        0.8107027041021743,
+        0.8414409546619851
+      ],
+      "far_recall": 0.7749627421758569,
+      "far_recall_ci95": [
+        0.7418504950263868,
+        0.8049444861958733
+      ],
+      "near_localization_error_m": 1.885081815947511,
+      "near_localization_median_m": 1.8854478597640991,
+      "false_positives": 1856,
+      "false_positives_per_frame": 0.9856611789697292,
+      "mean_latency_ms": 72.74086549244309,
+      "p95_latency_ms": 104.48528125562007,
+      "mean_available_margin_s": 1.383659754297531,
+      "fp_reduction_vs_camera": 0.0,
+      "margin_gain_vs_lidar_s": 0.7343844740391605
+    },
+    {
+      "method": "lidar",
+      "frames": 1883,
+      "near_recall": 0.894133215703573,
+      "near_recall_ci95": [
+        0.8807944438763804,
+        0.9061384712155396
+      ],
+      "mid_recall": 0.8978540772532189,
+      "mid_recall_ci95": [
+        0.8848950942156154,
+        0.9095032916902662
+      ],
+      "far_recall": 0.7764530551415797,
+      "far_recall_ci95": [
+        0.743406133018882,
+        0.806352506638187
+      ],
+      "near_localization_error_m": 0.12858713325342788,
+      "near_localization_median_m": 0.10956601798534393,
+      "false_positives": 1855,
+      "false_positives_per_frame": 0.9851301115241635,
+      "mean_latency_ms": 1072.4832880516838,
+      "p95_latency_ms": 1637.5714299036188,
+      "mean_available_margin_s": 0.6492752802583706,
+      "fp_reduction_vs_camera": 0.0005387931034482759,
+      "margin_gain_vs_lidar_s": 0.0
+    },
+    {
+      "method": "fusion",
+      "frames": 1883,
+      "near_recall": 0.8509042787825319,
+      "near_recall_ci95": [
+        0.8356486976266987,
+        0.8649726050656598
+      ],
+      "mid_recall": 0.7982832618025751,
+      "mid_recall_ci95": [
+        0.7815042936953009,
+        0.8140802566872101
+      ],
+      "far_recall": 0.6915052160953801,
+      "far_recall_ci95": [
+        0.6555500922427383,
+        0.7252800166302181
+      ],
+      "near_localization_error_m": 0.12630657553614855,
+      "near_localization_median_m": 0.1095137670636177,
+      "false_positives": 432,
+      "false_positives_per_frame": 0.22942113648433352,
+      "mean_latency_ms": 1145.2241535441267,
+      "p95_latency_ms": 1729.1310105953005,
+      "mean_available_margin_s": 0.537786401156453,
+      "fp_reduction_vs_camera": 0.7672413793103449,
+      "margin_gain_vs_lidar_s": -0.11148887910191752
+    },
+    {
+      "method": "proposed",
+      "frames": 1883,
+      "near_recall": 0.870754300838112,
+      "near_recall_ci95": [
+        0.8563147696555731,
+        0.883939416281482
+      ],
+      "mid_recall": 0.8433476394849786,
+      "mid_recall_ci95": [
+        0.8280250398250489,
+        0.8575399102555393
+      ],
+      "far_recall": 0.7272727272727273,
+      "far_recall_ci95": [
+        0.6923518293841296,
+        0.7596060819242426
+      ],
+      "near_localization_error_m": 0.12610949661862011,
+      "near_localization_median_m": 0.10947727784514427,
+      "false_positives": 1084,
+      "false_positives_per_frame": 0.5756771109930962,
+      "mean_latency_ms": 1154.6128857815843,
+      "p95_latency_ms": 1738.452332512678,
+      "mean_available_margin_s": 0.5625848888600055,
+      "fp_reduction_vs_camera": 0.41594827586206895,
+      "margin_gain_vs_lidar_s": -0.0866903913983651
+    }
+  ],
+  "class_results": [
+    {
+      "method": "camera",
+      "class": "Pedestrian",
+      "near_n": 697,
+      "near_recall": 0.7503586800573888,
+      "mid_n": 224,
+      "mid_recall": 0.20982142857142858,
+      "far_n": 26,
+      "far_recall": 0.038461538461538464
+    },
+    {
+      "method": "camera",
+      "class": "Cyclist",
+      "near_n": 98,
+      "near_recall": 0.8367346938775511,
+      "mid_n": 141,
+      "mid_recall": 0.2198581560283688,
+      "far_n": 42,
+      "far_recall": 0.023809523809523808
+    },
+    {
+      "method": "camera",
+      "class": "Car",
+      "near_n": 1472,
+      "near_recall": 0.9959239130434783,
+      "mid_n": 1965,
+      "mid_recall": 0.9404580152671755,
+      "far_n": 603,
+      "far_recall": 0.8590381426202321
+    },
+    {
+      "method": "lidar",
+      "class": "Pedestrian",
+      "near_n": 697,
+      "near_recall": 0.6800573888091822,
+      "mid_n": 224,
+      "mid_recall": 0.53125,
+      "far_n": 26,
+      "far_recall": 0.11538461538461539
+    },
+    {
+      "method": "lidar",
+      "class": "Cyclist",
+      "near_n": 98,
+      "near_recall": 0.8775510204081632,
+      "mid_n": 141,
+      "mid_recall": 0.6808510638297872,
+      "far_n": 42,
+      "far_recall": 0.38095238095238093
+    },
+    {
+      "method": "lidar",
+      "class": "Car",
+      "near_n": 1472,
+      "near_recall": 0.9966032608695652,
+      "mid_n": 1965,
+      "mid_recall": 0.9552162849872774,
+      "far_n": 603,
+      "far_recall": 0.8325041459369817
+    },
+    {
+      "method": "fusion",
+      "class": "Pedestrian",
+      "near_n": 697,
+      "near_recall": 0.5652797704447633,
+      "mid_n": 224,
+      "mid_recall": 0.15178571428571427,
+      "far_n": 26,
+      "far_recall": 0.0
+    },
+    {
+      "method": "fusion",
+      "class": "Cyclist",
+      "near_n": 98,
+      "near_recall": 0.7448979591836735,
+      "mid_n": 141,
+      "mid_recall": 0.19858156028368795,
+      "far_n": 42,
+      "far_recall": 0.0
+    },
+    {
+      "method": "fusion",
+      "class": "Car",
+      "near_n": 1472,
+      "near_recall": 0.9932065217391305,
+      "mid_n": 1965,
+      "mid_recall": 0.9150127226463104,
+      "far_n": 603,
+      "far_recall": 0.7694859038142621
+    },
+    {
+      "method": "proposed",
+      "class": "Pedestrian",
+      "near_n": 697,
+      "near_recall": 0.6083213773314203,
+      "mid_n": 224,
+      "mid_recall": 0.23660714285714285,
+      "far_n": 26,
+      "far_recall": 0.0
+    },
+    {
+      "method": "proposed",
+      "class": "Cyclist",
+      "near_n": 98,
+      "near_recall": 0.8469387755102041,
+      "mid_n": 141,
+      "mid_recall": 0.46808510638297873,
+      "far_n": 42,
+      "far_recall": 0.0
+    },
+    {
+      "method": "proposed",
+      "class": "Car",
+      "near_n": 1472,
+      "near_recall": 0.9966032608695652,
+      "mid_n": 1965,
+      "mid_recall": 0.9394402035623409,
+      "far_n": 603,
+      "far_recall": 0.8092868988391376
+    }
+  ]
+}

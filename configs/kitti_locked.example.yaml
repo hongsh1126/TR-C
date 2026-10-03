@@ -1,0 +1,8 @@
+path: kitti_yolo
+train: images/train
+val: calibration_images.txt
+test: locked_test_images.txt
+names:
+  0: Car
+  1: Pedestrian
+  2: Cyclist
